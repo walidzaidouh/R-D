@@ -29,4 +29,23 @@ public class TextCleaner {
         }
         return result;
     }
+
+    public String cleanIsoName(String input) {
+        if (input == null) {
+            return null;
+        }
+
+        return input
+                // suppression du NULL byte (sécurité)
+                .replace("\u0000", " ")
+
+                // whitelist ISO Latin (lettres + espaces + tiret)
+                .replaceAll("[^\\p{IsLatin}\\s-]", " ")
+
+                // normalisation des espaces
+                .replaceAll("\\s+", " ")
+                .trim();
+    }
+
+
 }
