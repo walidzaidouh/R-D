@@ -1,0 +1,62 @@
+[
+  {
+    "id": "case_01_simple",
+    "input": "Bonjour le monde",
+    "expected": "Bonjour le monde"
+  },
+  {
+    "id": "case_02_accents_symbols",
+    "input": "Crème-brûlée!!! 100% délicieuse 😋",
+    "expected": "Crème brûlée délicieuse"
+  },
+  {
+    "id": "case_03_apostrophes_tirets",
+    "input": "C’est l’homme-d’affaires… peut-être?",
+    "expected": "C est l homme d affaires peut être"
+  },
+  {
+    "id": "case_04_emails_urls",
+    "input": "Contactez-moi: test.email+spam@gmail.com https://example.com",
+    "expected": "Contactez moi test email spam gmail com https example com"
+  },
+  {
+    "id": "case_05_chiffres_only",
+    "input": "1234567890",
+    "expected": ""
+  },
+  {
+    "id": "case_06_symbols_only",
+    "input": "!!! $$$ ### 😈🔥",
+    "expected": ""
+  },
+  {
+    "id": "case_07_multilanguage",
+    "input": "Français 中文 العربية Русский English",
+    "expected": "Français 中文 العربية Русский English"
+  },
+  {
+    "id": "case_08_whitespace",
+    "input": "   Bonjour\n\n\tle    monde   ! ",
+    "expected": "Bonjour le monde"
+  },
+  {
+    "id": "case_09_ligatures",
+    "input": "Æsop’s fables — œuvre naïve",
+    "expected": "Æsop s fables œuvre naïve"
+  },
+  {
+    "id": "case_10_ocr_noise",
+    "input": "###ART1CLE@@@   SP3C1AL***",
+    "expected": "ART CLE SP C AL"
+  },
+  {
+    "id": "case_11_hashtags_mentions",
+    "input": "#Urgent @Support merci!!!",
+    "expected": "Urgent Support merci"
+  },
+  {
+    "id": "case_12_mixed_extreme",
+    "input": "🔥L'été 2024 — succès à 100%!!! #Paris🇫🇷",
+    "expected": "L été succès à Paris"
+  }
+]
